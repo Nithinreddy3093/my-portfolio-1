@@ -1,7 +1,7 @@
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const navLinks = ["Projects", "Skills", "About", "Contact"];
+const navLinks = ["Projects", "Skills", "About", "Experience"];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="flex items-center gap-4">
         {/* CTA */}
         <a
-          href="mailto:nithinreddy3093@gmail.com"
+          href="mailto:marthalanithinreddy3093@gmail.com"
           className="relative rounded-full border border-foreground/60 glow-top"
           style={{ borderWidth: "0.6px" }}
         >
