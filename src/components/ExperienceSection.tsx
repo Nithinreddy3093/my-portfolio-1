@@ -1,4 +1,5 @@
 import { Calendar, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Experience {
   period: string;
@@ -50,27 +51,42 @@ const experiences: Experience[] = [
 const ExperienceSection = () => (
   <section id="experience" className="py-24 px-6 md:px-[120px]">
     <div className="max-w-4xl mx-auto">
-      <h2 className="text-4xl md:text-5xl font-medium text-foreground text-center mb-4">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl md:text-5xl font-medium text-foreground text-center mb-4"
+      >
         Experience
-      </h2>
-      <p className="text-muted-foreground text-center mb-16 max-w-md mx-auto">
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="text-muted-foreground text-center mb-16 max-w-md mx-auto"
+      >
         My professional journey and key accomplishments.
-      </p>
+      </motion.p>
 
-      {/* Timeline */}
       <div className="relative">
-        {/* Vertical line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border hidden md:block" />
 
         <div className="flex flex-col gap-12">
           {experiences.map((exp, i) => {
             const isLeft = i % 2 === 1;
             return (
-              <div key={i} className="relative flex flex-col md:flex-row items-center">
-                {/* Dot */}
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="relative flex flex-col md:flex-row items-center"
+              >
                 <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-foreground/60 border-2 border-background z-10" />
 
-                {/* Card */}
                 <div
                   className={`w-full md:w-[calc(50%-32px)] ${
                     isLeft ? "md:mr-auto" : "md:ml-auto"
@@ -99,7 +115,7 @@ const ExperienceSection = () => (
                     </ul>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
