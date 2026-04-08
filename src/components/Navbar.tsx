@@ -1,7 +1,9 @@
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { useState } from "react";
 
-const navLinks = ["Projects", "Skills", "About", "Experience"];
+const RESUME_URL = "https://drive.google.com/file/d/1P0jKrPKl5ZYryeUdlgRpngKbVKeRjAuK/view?usp=drive_link";
+
+const navLinks = ["Projects", "Skills", "About", "Experience", "Education"];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,7 +32,18 @@ const Navbar = () => {
         ))}
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
+        {/* Resume */}
+        <a
+          href={RESUME_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="hidden sm:inline-flex items-center gap-2 rounded-full border border-border px-5 py-[11px] text-sm font-medium text-foreground hover:border-foreground/40 transition-colors"
+        >
+          <Download size={14} />
+          Resume
+        </a>
+
         {/* CTA */}
         <a
           href="mailto:marthalanithinreddy3093@gmail.com"
@@ -60,6 +73,15 @@ const Navbar = () => {
               {link}
             </button>
           ))}
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-foreground text-base font-medium"
+          >
+            <Download size={16} />
+            Resume
+          </a>
         </div>
       )}
     </nav>
