@@ -1,7 +1,8 @@
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 const RESUME_URL = "https://drive.google.com/file/d/1P0jKrPKl5ZYryeUdlgRpngKbVKeRjAuK/view?usp=drive_link";
+const WHATSAPP_URL = "https://wa.me/917093569420?text=Hi%20Nithin!";
 
 const navLinks = ["Projects", "Skills", "About", "Experience", "Education"];
 
@@ -30,6 +31,15 @@ const Navbar = () => {
             {link}
           </button>
         ))}
+        <a
+          href="https://crackit-knowit.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-[6px] text-foreground text-sm font-medium hover:text-foreground/80 transition-colors"
+        >
+          CrackIT
+          <ExternalLink size={12} />
+        </a>
       </div>
 
       <div className="flex items-center gap-3">
@@ -44,9 +54,11 @@ const Navbar = () => {
           Resume
         </a>
 
-        {/* CTA */}
+        {/* CTA - WhatsApp */}
         <a
-          href="mailto:marthalanithinreddy3093@gmail.com"
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
           className="relative rounded-full border border-foreground/60 glow-top"
           style={{ borderWidth: "0.6px" }}
         >
@@ -73,6 +85,15 @@ const Navbar = () => {
               {link}
             </button>
           ))}
+          <a
+            href="https://crackit-knowit.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-foreground text-base font-medium"
+          >
+            <ExternalLink size={16} />
+            CrackIT
+          </a>
           <a
             href={RESUME_URL}
             target="_blank"
