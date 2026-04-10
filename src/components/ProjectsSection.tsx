@@ -122,6 +122,17 @@ const ProjectsSection = () => {
               </div>
             ))}
           </div>
+
+          <div className="flex justify-center mt-10">
+            <a
+              href="https://github.com/Nithinreddy3093?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground/80 hover:text-foreground hover:border-foreground/40 transition-all duration-300 text-sm font-medium"
+            >
+              View All Projects <ArrowUpRight size={16} />
+            </a>
+          </div>
         </div>
       </section>
     </AnimatedSection>
