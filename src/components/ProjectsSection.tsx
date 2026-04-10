@@ -75,7 +75,7 @@ const ProjectsSection = () => {
             {FEATURED_PROJECTS.map((project) => (
               <div
                 key={project.name}
-                className="group rounded-xl border border-border bg-card p-6 flex flex-col justify-between card-hover transition-all duration-300 hover:border-foreground/20"
+                className="group rounded-xl border border-border bg-card p-6 flex flex-col justify-between card-hover overflow-hidden"
               >
                 <div>
                   <div className="flex items-start justify-between mb-3">
